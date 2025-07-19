@@ -1,0 +1,141 @@
+.envelope-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.envelope {
+  position: relative;
+  width: 280px;
+  height: 200px;
+  background: #f9b6c1;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.6s ease;
+}
+
+/* 🎥 Video showing at the top of the envelope */
+.overlay-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  object-fit: cover; /* 👈 fills width, may crop a little vertically */
+  z-index: 5;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  opacity: 1;
+  transition: opacity 2s ease;
+  pointer-events: none;
+}
+
+
+
+/* 🎀 Ribbon in center of envelope */
+.center-ribbon {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  width: 100px;
+  transform: translate(-50%, -50%);
+  z-index: 6;
+  pointer-events: none;
+  transition: opacity 1s ease;
+  filter: drop-shadow(0 4px 6px rgba(255, 105, 180, 0.5));
+}
+
+/* Background ribbon cross (behind all) */
+.ribbon {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background:
+    linear-gradient(to right, transparent 49%, #93314f 50%, transparent 51%),
+    linear-gradient(to bottom, transparent 49%, #93314f 50%, transparent 51%);
+  z-index: 2;
+  pointer-events: none;
+  transition: all 1s ease;
+}
+
+.tag {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: #fff0f5;
+  padding: 5px 10px;
+  font-size: 18px;
+  border-radius: 8px;
+  transform: rotate(-10deg);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  z-index: 2;
+}
+
+/* Flap */
+.flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  background: #ffc5d6;
+  transform-origin: top center;
+  transform: rotateX(0deg);
+  z-index: 4;
+  transition: transform 1s ease-in-out 1s;
+}
+
+/* Message Card */
+.message-card {
+  position: absolute;
+  inset: 0;
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease 2s;
+  z-index: 1;
+}
+
+.message-card p {
+  margin: 0;
+  color: #c71585;
+  font-size: 18px;
+  font-family: 'Dancing Script', cursive;
+}
+
+/* Start button */
+#start-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #ff69b4;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+#start-btn:hover {
+  background: #e75480;
+}
+
+.fullscreen-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover; /* Fills the screen while preserving aspect ratio */
+  z-index: 9999;
+  background-color: black;
+  display: none;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Romantic Birthday</title>
+
+  <!-- Heart and Envelope Styles -->
+  <link rel="stylesheet" href="heart.css">
+  <link rel="stylesheet" href="envelope.css">
+</head>
+<body>
+
+  <!-- Glowing background -->
+  <div class="bg-glow"></div>
+
+  <!-- Floating heart animation container -->
+  <div id="heart-container"></div>
+
+  <!-- Envelope in the center -->
+  <div class="envelope-wrapper">
+    <div class="envelope" id="envelope">
+
+      <!-- Top Video Overlay (visible before click) -->
+      <video class="overlay-video" id="overlayVideo" autoplay muted loop playsinline>
+        <source src="love1.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+      <!-- Centered Ribbon PNG (on top) -->
+      <img src="ribbon.png" alt="Ribbon" class="center-ribbon" id="centerRibbon" />
+
+      <!-- Cross Ribbons -->
+      <div class="ribbon" id="ribbon"></div>
+      <div class="tag">💖</div>
+
+      <!-- Envelope Flap -->
+      <div class="flap" id="flap"></div>
+
+      <!-- Message -->
+      <div class="message-card" id="message">
+        <p>Happy Birthday, my love! In Advance 🎉💘<br>Click to begin your surprise...</p>
+        <button id="start-btn">Start</button>
+      </div>
+    </div>
+  </div>
+<video id="fullscreenVideo" class="fullscreen-video">
+  <source src="love2.mp4" type="video/mp4" />
+  Your browser does not support the video tag.
+</video>
+
+  <!-- Scripts -->
+  <script src="heart.js"></script>
+  <script src="envelope.js"></script>
+  
+
+</body>
+</html>
