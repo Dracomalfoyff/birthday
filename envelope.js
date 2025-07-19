@@ -30,21 +30,15 @@ envelope.addEventListener('click', () => {
 
 // Start button click: show fullscreen video
 startBtn.addEventListener('click', () => {
-  // Optional: fade out background and envelope
-  const envelopeWrapper = document.querySelector('.envelope-wrapper');
-  const heartContainer = document.getElementById('heart-container');
-  const bgGlow = document.querySelector('.bg-glow');
+  const fullscreenVideo = document.getElementById('fullscreenVideo');
 
-  if (envelopeWrapper) envelopeWrapper.style.display = 'none';
-  if (heartContainer) heartContainer.style.opacity = '0';
-  if (bgGlow) bgGlow.style.opacity = '0';
-
-  // Show fullscreen video
   if (fullscreenVideo) {
-    fullscreenVideo.style.display = 'block';
+    fullscreenVideo.style.visibility = 'visible';
+    fullscreenVideo.style.opacity = '1';
+    fullscreenVideo.style.pointerEvents = 'auto';
 
-fullscreenVideo.play().catch((error) => {
-  console.error('Video play failed:', error);
-});
+    fullscreenVideo.play().catch((err) => {
+      console.error("Video playback failed:", err);
+    });
   }
 });
